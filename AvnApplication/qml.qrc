@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>data/assembly.png</file>
+        <file>data/cplus.png</file>
+        <file>data/fail.png</file>
+        <file>data/javascript.png</file>
+        <file>data/opengl.png</file>
+        <file>data/qml.png</file>
+        <file>data/success.png</file>
+    </qresource>
+</RCC>
