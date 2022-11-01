@@ -36,7 +36,7 @@ public:
         { "/data/opengl.png", "Opengl", 30 }
     };
 
-    Q_INVOKABLE void requestToControllerChangeName(QString name);
+    Q_INVOKABLE void requestToControllerUpdateInfor(QString name, int index);
     void setEmployeesName(QString value);
     QString getEmployeesName();
     QString m_employeesName = "Moby-Dick";

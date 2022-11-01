@@ -1,4 +1,5 @@
 #include "EmployeeDetailModel.h"
+#include "EmployeesModel.h"
 
 EmployeeDetailModel::EmployeeDetailModel(QObject *parent) : QAbstractListModel(parent)
 {
@@ -33,9 +34,19 @@ QHash<int, QByteArray> EmployeeDetailModel::roleNames() const
     };
 }
 
-void EmployeeDetailModel::requestToControllerChangeName(QString name)
+void EmployeeDetailModel::requestToControllerUpdateInfor(QString name, int index)
 {
     setEmployeesName(name);
+    QList<MyListItem> m_lisbk = {
+        { "/data/assembly.png", "Assembly", index + 10 },
+        { "/data/cplus.png", "C++", index },
+        { "/data/javascript.png", "Java", index + 20 },
+        { "/data/qml.png", "Qml", 30 },
+        { "/data/opengl.png", "Opengl", index }
+    };
+    m_list.clear();
+    m_list.append(m_lisbk);
+    emit endResetModel();
 }
 
 void EmployeeDetailModel::setEmployeesName(QString value)

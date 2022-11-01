@@ -3,7 +3,9 @@
 #include <model/SortFilterProxyModel.h>
 #include <model/EmployeeDetailModel.h>
 #include <model/employeesmodel.h>
+#include <controler/MainControler.h>
 #include <QQmlContext>
+#include <appmain.h>
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +15,8 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
-    qmlRegisterType<SortFilterProxyModel>("sortHT", 1, 0, "SortFilterProxyModel");
+    qmlRegisterType<SortFilterProxyModel>("sortFilter", 1, 0, "SortFilterProxyModel");
+    appMain appmain(engine.rootContext());
     EmployeeDetailModel employee;
     EmployeesModel employeesModel;
     engine.rootContext()->setContextProperty("employee", &employee);
